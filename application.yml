@@ -1,0 +1,13 @@
+general:
+  kafka-topic: traders-updates
+
+spring:
+  kafka:
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      # all listeners will use JsonDeserializer to convert
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+          # trust all packages, lock down in production
+          spring.json.trusted.packages: "*"
