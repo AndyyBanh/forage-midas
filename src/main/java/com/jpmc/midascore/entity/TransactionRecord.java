@@ -18,11 +18,14 @@ public class TransactionRecord {
     private UserRecord receiverId;
 
     private float amount;
+    private float incentiveAmount;
 
-    public TransactionRecord(UserRecord senderId, UserRecord receiverId, float amount) {
+
+    public TransactionRecord(UserRecord senderId, UserRecord receiverId, float amount, float incentiveAmount) {
         this.senderId = senderId;
         this.receiverId = receiverId;
         this.amount = amount;
+        this.incentiveAmount = incentiveAmount;
     }
 
     protected TransactionRecord() {
@@ -51,5 +54,13 @@ public class TransactionRecord {
 
     public void setAmount(float amount) {
         this.amount = amount;
+    }
+
+    public float getIncentiveAmount() {
+        return incentiveAmount;
+    }
+
+    public void setIncentiveAmount(float incentiveAmount) {
+        this.incentiveAmount = incentiveAmount;
     }
 }
